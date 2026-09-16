@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>هدية أحمد 🎁</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background:
+        radial-gradient(circle at top, #444 0%, #1c1c1c 45%, #000 100%);
+    color: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+/* الكرت */
+.card {
+    width: 90%;
+    max-width: 520px;
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    background: rgba(20, 20, 20, 0.92);
+
+    border: 1px solid #777;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 0 30px rgba(255,255,255,0.08),
+        0 20px 60px rgba(0,0,0,0.7);
+
+    animation: appear 0.7s ease;
+}
+
+/* العناوين */
+h1 {
+    color: #fff;
+    font-size: 31px;
+    margin-bottom: 18px;
+}
+
+p {
+    color: #ddd;
+    font-size: 18px;
+    line-height: 2;
+}
+
+/* الأزرار */
+button {
+    border: 1px solid #777;
+
+    background: linear-gradient(
+        135deg,
+        #fff,
+        #aaa
+    );
+
+    color: #000;
+
+    padding: 14px 28px;
+
+    margin: 8px;
+
+    border-radius: 15px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+button:hover {
+    transform: scale(1.06);
+
+    background: linear-gradient(
+        135deg,
+        #eee,
+        #777
+    );
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* إخفاء الصفحات */
+.hidden {
+    display: none;
+}
+
+/* الصورة */
+.gif {
+    width: 100%;
+    max-width: 350px;
+
+    display: block;
+
+    margin: 20px auto;
+
+    border-radius: 18px;
+
+    border: 1px solid #666;
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.7);
+}
+
+/* القلوب والإيموجيات */
+.emoji {
+    position: fixed;
+
+    bottom: -60px;
+
+    pointer-events: none;
+
+    animation: floatUp linear forwards;
+
+    z-index: 10;
+}
+
+/* الحركة */
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes floatUp {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<div class="card">
+
+
+    <!-- ========================= -->
+    <!-- الصفحة الأولى -->
+    <!-- ========================= -->
+
+    <div id="startPage">
+
+        <h1>
+            🎁 هدية خاصة 🎁
+        </h1>
+
+        <p>
+            عندي لك شيء بسيط يا أحمد 🤍
+            <br>
+            لكن قبل الهدية لازم تجاوب على كم سؤال 🎉
+        </p>
+
+        <button onclick="showQuestion1()">
+            ابدأ 🎉
+        </button>
+
+    </div>
+
+
+
+    <!-- ========================= -->
+    <!-- السؤال الأول -->
+    <!-- ========================= -->
+
+    <div id="question1" class="hidden">
+
+        <h1>
+            هل أنت أحمد؟ 🤍
+        </h1>
+
+        <p>
+            جاوب بصراحة 🎁
+        </p>
+
+        <button onclick="correct1()">
+            نعم 🤍
+        </button>
+
+        <button onclick="wrong1()">
+            لا
+        </button>
+
+    </div>
+
+
+
+    <!-- ========================= -->
+    <!-- إجابة السؤال الأول الخطأ -->
+    <!-- ========================= -->
+
+    <div id="wrong1" class="hidden">
+
+        <h1>
+            متأكد؟ 🎉
+        </h1>
+
+        <p>
+            أحس إنك أحمد 🤍
+            <br>
+            حاول مرة ثانية.
+        </p>
+
+        <button onclick="showQuestion1()">
+            أيوه 🤍
+        </button>
+
+    </div>
+
+
+
+    <!-- ========================= -->
+    <!-- السؤال الثاني -->
+    <!-- ========================= -->
+
+    <div id="question2" class="hidden">
+
+        <h1>
+            من أحب؟ 🤍
+        </h1>
+
+        <button onclick="correct2()">
+            بسمة 🤍
+        </button>
+
+        <button onclick="wrong2()">
+            67
+        </button>
+
+    </div>
+
+
+
+    <!-- ========================= -->
+    <!-- إجابة السؤال الثاني الخطأ -->
+    <!-- ========================= -->
+
+    <div id="wrong2" class="hidden">
+
+        <h1>
+            67؟ 🎂
+        </h1>
+
+        <p>
+            يا أحمد وش الإجابة هذي؟
+            <br>
+            حاول مرة ثانية 🤍
+        </p>
+
+        <button onclick="showQuestion2()">
+            أرجع للسؤال 🤍
+        </button>
+
+    </div>
+
+
+
+    <!-- ========================= -->
+    <!-- الصفحة النهائية -->
+    <!-- ========================= -->
+
+    <div id="finalPage" class="hidden">
+
+        <h1>
+            🎉 كل عام وأنت بخير 🎂
+        </h1>
+
+
+        <!-- الصورة -->
+        <img
+            src="ahmed.gif"
+            class="gif"
+            alt="هدية أحمد"
+        >
+
+
+        <p>
+
+            كل عام وأنت بخير يا أحمد 🤍
+
+            <br><br>
+
+            أتمنى لك سنة جميلة
+            مليانة فرح وسعادة 🥳
+
+            <br><br>
+
+            وعقبال كل أمنياتك تتحقق 🤍
+
+            <br><br>
+
+            🎁🎂🥳
+
+        </p>
+
+
+        <!-- زر الأغنية -->
+        <button onclick="toggleMusic()">
+            🎶 تشغيل / إيقاف الأغنية
+        </button>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- ========================= -->
+<!-- الأغنية -->
+<!-- ========================= -->
+
+<audio
+    id="music"
+    loop
+    preload="auto">
+
+    <source
+        src="birthday.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+
+<script>
+
+/* =========================
+   إخفاء كل الصفحات
+========================= */
+
+function hideAll() {
+
+    document
+        .getElementById("startPage")
+        .classList.add("hidden");
+
+    document
+        .getElementById("question1")
+        .classList.add("hidden");
+
+    document
+        .getElementById("wrong1")
+        .classList.add("hidden");
+
+    document
+        .getElementById("question2")
+        .classList.add("hidden");
+
+    document
+        .getElementById("wrong2")
+        .classList.add("hidden");
+
+    document
+        .getElementById("finalPage")
+        .classList.add("hidden");
+}
+
+
+
+/* =========================
+   السؤال الأول
+========================= */
+
+function showQuestion1() {
+
+    hideAll();
+
+    document
+        .getElementById("question1")
+        .classList.remove("hidden");
+
+
+    /* تشغيل الأغنية بعد ضغط المستخدم */
+
+    const music =
+        document.getElementById("music");
+
+    music.play().catch(function() {});
+
+}
+
+
+
+/* =========================
+   إجابة صحيحة 1
+========================= */
+
+function correct1() {
+
+    hideAll();
+
+    document
+        .getElementById("question2")
+        .classList.remove("hidden");
+
+}
+
+
+
+/* =========================
+   إجابة خاطئة 1
+========================= */
+
+function wrong1() {
+
+    hideAll();
+
+    document
+        .getElementById("wrong1")
+        .classList.remove("hidden");
+
+}
+
+
+
+/* =========================
+   العودة للسؤال الثاني
+========================= */
+
+function showQuestion2() {
+
+    hideAll();
+
+    document
+        .getElementById("question2")
+        .classList.remove("hidden");
+
+}
+
+
+
+/* =========================
+   إجابة خاطئة 2
+========================= */
+
+function wrong2() {
+
+    hideAll();
+
+    document
+        .getElementById("wrong2")
+        .classList.remove("hidden");
+
+}
+
+
+
+/* =========================
+   الإجابة الصحيحة النهائية
+========================= */
+
+function correct2() {
+
+    hideAll();
+
+    document
+        .getElementById("finalPage")
+        .classList.remove("hidden");
+
+
+    /* تشغيل الأغنية */
+
+    const music =
+        document.getElementById("music");
+
+    music.play().catch(function() {});
+
+
+    /* تشغيل الإيموجيات */
+
+    startEffects();
+
+}
+
+
+
+/* =========================
+   تشغيل / إيقاف الأغنية
+========================= */
+
+function toggleMusic() {
+
+    const music =
+        document.getElementById("music");
+
+
+    if (music.paused) {
+
+        music.play().catch(function() {});
+
+    } else {
+
+        music.pause();
+
+    }
+
+}
+
+
+
+/* =========================
+   الإيموجيات المتحركة
+========================= */
+
+function startEffects() {
+
+    setInterval(function() {
+
+        const emoji =
+            document.createElement("div");
+
+        emoji.className = "emoji";
+
+
+        /* الإيموجيات المطلوبة فقط */
+
+        const emojis = [
+            "🎉",
+            "🎁",
+            "🤍",
+            "🎶",
+            "🎂",
+            "🥳"
+        ];
+
+
+        emoji.innerHTML =
+            emojis[
+                Math.floor(
+                    Math.random() * emojis.length
+                )
+            ];
+
+
+        emoji.style.left =
+            Math.random() * 100 + "vw";
+
+
+        emoji.style.fontSize =
+            (20 + Math.random() * 25) + "px";
+
+
+        emoji.style.animationDuration =
+            (4 + Math.random() * 4) + "s";
+
+
+        document.body.appendChild(emoji);
+
+
+        setTimeout(function() {
+
+            emoji.remove();
+
+        }, 8000);
+
+
+    }, 600);
+
+}
+
+</script>
+
+</body>
+</html>
